@@ -71,6 +71,16 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "wave": {
+          "0%": { transform: "rotate(0deg)" },
+          "15%": { transform: "rotate(14deg)" },
+          "30%": { transform: "rotate(-8deg)" },
+          "40%": { transform: "rotate(14deg)" },
+          "50%": { transform: "rotate(-4deg)" },
+          "60%": { transform: "rotate(10deg)" },
+          "70%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(0deg)" }
+        },
         spotlight: {
           "0%": {
             opacity: "0",
@@ -101,6 +111,7 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "wave": "wave 2.5s ease-in-out infinite",
         "spotlight": "spotlight 2s ease .75s forwards",
         "shimmer": "shimmer 2s linear infinite",
         "meteor-effect": "meteor 5s linear infinite",

@@ -45,14 +45,20 @@ const BlurFadeText = ({
               exit="hidden"
               variants={combinedVariants}
               transition={{
-                yoyo: Infinity,
                 delay: delay + i * characterDelay,
                 ease: "easeOut",
               }}
               className={cn("inline-block", className)}
               style={{ width: char.trim() === "" ? "0.2em" : "auto" }}
             >
-              {char}
+              {/\p{Extended_Pictographic}/u.test(char) ? (
+                <span className={cn(
+                  "inline-block align-middle",
+                  char === "👋" ? "origin-[70%_70%] animate-wave" : ""
+                )}>{char}</span>
+              ) : (
+                char
+              )}
             </motion.span>
           ))}
         </AnimatePresence>
@@ -69,13 +75,21 @@ const BlurFadeText = ({
           exit="hidden"
           variants={combinedVariants}
           transition={{
-            yoyo: Infinity,
             delay,
             ease: "easeOut",
           }}
           className={cn("inline-block", className)}
         >
-          {text}
+          {text.split(/(\p{Extended_Pictographic})/u).map((part, i) => (
+            /\p{Extended_Pictographic}/u.test(part) ? (
+              <span key={i} className={cn(
+                "inline-block align-middle",
+                part === "👋" ? "origin-[70%_70%] animate-wave" : ""
+              )}>{part}</span>
+            ) : (
+              <span key={i}>{part}</span>
+            )
+          ))}
         </motion.span>
       </AnimatePresence>
     </div>
