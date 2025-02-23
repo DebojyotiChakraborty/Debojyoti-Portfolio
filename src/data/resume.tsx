@@ -117,7 +117,7 @@ export const DATA = {
     {
       school: "Amrita Vidyalayam, Durgapur",
       href: "#",
-      degree: "CBSE   Class 1 - Class 12",
+      degree: "CBSE     Class 1 - Class 12",
       logoUrl: "/amrita.png",
       start: "2010",
       end: "2022",
@@ -126,7 +126,7 @@ export const DATA = {
   projects: [
     {
       title: "Radpapers - 4K, HD Wallpapers",
-      href: "#",
+      href: "https://play.google.com/store/apps/details?id=com.debojyoti.radpapers",
       dates: "May 2024 - Present",
       description: "A beautiful wallpaper app with tons of beautiful ai-generated, human-edited wallpapers. I have designed the entire app, screens, flows, animations and micro-interactions. Developed it using Flutter, Google Firebase and GitHub. Currently, it has over 9500+ downloads on the Play Store, with 4.2 stars rating. iOS version of the app is currently under development and would be out soon!",
       images: ["/radpapers-1.png"],
@@ -134,27 +134,27 @@ export const DATA = {
       stats: {
         downloads: "9500+",
         rating: "4.2 stars"
-      }
+        }
     } satisfies Project,
     {
       title: "radpapers.in",
-      href: "#",
+      href: "https://radpapers.in/",
       dates: "Sept 2024 - Oct 2024",
       description: "A responsive landing page for the Radpapers App which I designed and developed using Next.js, TailwindCSS, TypeScript.",
       images: ["/radpapers-web.png"],
       technologies: ["Next.js", "TailwindCSS", "TypeScript"]
     } satisfies Project,
     {
-      title: "ChatAI - Image Generator",
+      title: "OrbitAI - Image Generator",
       href: "#",
       dates: "Nov 2024 - Jan 2025",
-      description: "A responsive AI Image Generator app with a beautiful UI. I designed the Spatial Design in the Vision Pro. I designed the screens, flows, app-icon and interactive onboarding.",
-      images: ["/chatai-1.png"],
-      technologies: ["Flutter", "Firebase", "Hive"]
+      description: "A modern AI Image Generator App which I designed as a freelance project, taking inspiration from Apple's new Spatial Design in the Vision Pro. I designed the screens, flows, app-icon and interactive onboarding.",
+      images: ["/orbit-ai.png"],
+      technologies: ["Flutter", "Spatial Design", "Vision Pro"]
     } satisfies Project,
     {
       title: "WhatsBuddy - WhatsApp Utility",
-      href: "#",
+      href: "https://github.com/DebojyotiChakraborty/WhatsBuddy",
       dates: "Nov 2024 - Jan 2025",
       description: "WhatsBuddy is a lightweight and open-source WhatsApp utility app that helps you keep your contact list clean and tidy by letting you message people without saving their phone number on your device or add them to temporary contacts which are automatically deleted after 24 hours. It also lets you save your Status media you have seen on your device or share it directly to other social media. Built using Flutter, Riverpod, Clean Architecture and Hive.",
       images: ["/whatsbuddy-1.png"],
@@ -164,7 +164,7 @@ export const DATA = {
   hackathons: [
     {
       title: "Hack Western 5",
-      dates: "November 23rd - 25th, 2018",
+        dates: "November 23rd - 25th, 2018",
       location: "London, Ontario",
       description:
         "Developed a mobile application which delivered bedtime stories to children using augmented reality.",

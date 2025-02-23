@@ -17,6 +17,8 @@ import { useTheme } from "next-themes";
 import Lenis from '@studio-freight/lenis'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { LinkPreview } from "@/components/LinkPreview";
+import Image from "next/image";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -269,38 +271,71 @@ export default function Page() {
                 >
                   <div className="space-y-4 border rounded-xl p-6">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-medium">{project.title}</h3>
+                      <LinkPreview
+                        url={project.href}
+                        width={320}
+                        height={180}
+                      >
+                        <h3 className="text-sm font-medium hover:text-primary transition-colors">{project.title}</h3>
+                      </LinkPreview>
                       <span className="text-muted-foreground text-sm">{project.dates}</span>
                     </div>
                     
-                    <p className="text-muted-foreground text-sm">
-                      {project.description.split(' and ').map((part, i, arr) => (
-                        <span key={i}>
-                          {part}
-                          {i < arr.length - 1 && <span className="text-foreground"> and </span>}
-                        </span>
-                      ))}
-                    </p>
+                    <div className="prose max-w-full text-pretty text-sm text-muted-foreground dark:prose-invert font-medium">
+                      <p>
+                        {project.title === "radpapers.in" && (
+                          <>
+                            A <span className="text-foreground">responsive landing</span> page for the Radpapers App which I designed and developed using <span className="text-foreground">Next.js</span>, <span className="text-foreground">TailwindCSS</span>, <span className="text-foreground">TypeScript</span>.
+                          </>
+                        )}
+                        
+                        {project.title === "OrbitAI - Image Generator" && (
+                          <>
+                            A modern <span className="text-foreground">AI Image Generator</span> App which I designed as a freelance project, taking inspiration from Apple's new <span className="text-foreground">Spatial Design</span> in the Vision Pro. I designed the <span className="text-foreground">screens</span>, <span className="text-foreground">flows</span>, <span className="text-foreground">app-icon</span> and <span className="text-foreground">interactive onboarding</span>.
+                          </>
+                        )}
 
-                    {'stats' in project && project.stats && (
-                      <p className="text-sm text-muted-foreground">
-                        Currently, it has over <span className="text-foreground">{project.stats.downloads} downloads</span> on the Play Store, with <span className="text-foreground">{project.stats.rating}</span>.
+                        {project.title === "WhatsBuddy - WhatsApp Utility" && (
+                          <>
+                            WhatsBuddy is a <span className="text-foreground">lightweight</span> and <span className="text-foreground">open-source</span> WhatsApp utility app that helps you keep your <span className="text-foreground">contact list clean and tidy</span> by letting you message people <span className="text-foreground">without saving their phone number</span> to your device or add them to <span className="text-foreground">temporary contacts</span> which are automatically deleted after 24 hours. It also lets you save any <span className="text-foreground">Status media</span> you have viewed, to your device or even share it directly to social media. Built using <span className="text-foreground">Flutter</span>, <span className="text-foreground">Riverpod</span>, <span className="text-foreground">Clean Architecture</span> and <span className="text-foreground">Hive</span>.
+                          </>
+                        )}
+
+                        {project.title === "Radpapers - 4K, HD Wallpapers" && (
+                          <>
+                            A beautiful wallpaper app with tons of beautiful ai-generated, human-edited wallpapers. I have designed the entire app, <span className="text-foreground">screens</span>, <span className="text-foreground">flows</span>, <span className="text-foreground">animations</span> and <span className="text-foreground">micro-interactions</span>. Developed it using <span className="text-foreground">Flutter</span>, <span className="text-foreground">Google Firebase</span> and <span className="text-foreground">GitHub</span>. Currently, it has over <span className="text-foreground">9500+ downloads</span> on the Play Store, with <span className="text-foreground">4.2 stars rating</span>. iOS version of the app is currently under development and should be out soon!
+                          </>
+                        )}
                       </p>
-                    )}
+
+                      {'stats' in project && project.stats && (
+                        <p className="text-sm text-muted-foreground">
+                          Currently, it has over <span className="text-foreground">{project.stats.downloads}</span> on the Play Store, with <span className="text-foreground">{project.stats.rating}</span>.
+                        </p>
+                      )}
+                    </div>
 
                     <div className="flex gap-2 flex-wrap">
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="text-xs text-muted-foreground border rounded px-2 py-1"
+                          className="bg-black dark:bg-white text-white dark:text-black px-2 py-1 rounded-md transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg text-xs sm:text-sm font-normal"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
 
-                    <div className="aspect-[16/9] bg-muted rounded-xl overflow-hidden">
-                      <div className="w-full h-full bg-gray-200 animate-pulse" />
+                    <div className="w-full rounded-xl overflow-hidden">
+                      <div className="relative w-full">
+                        <Image
+                          src={project.images[0]}
+                          alt={project.title}
+                          width={1920}
+                          height={1080}
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
                     </div>
                   </div>
                 </BlurFade>
@@ -310,19 +345,23 @@ export default function Page() {
         </section>
         <section id="contact">
           <div className="flex flex-col items-start gap-4">
-            <h2 className="text-2xl font-bold font-sans">Contact</h2>
-            <p className="text-xl text-muted-foreground">
-              Want to get in touch or hire me for a project?{" "}
-              <br />
-              Just shoot me a DM at{" "}
-              <Link href={DATA.contact.social.X.url} className="text-foreground underline underline-offset-4">
-                X
-              </Link>
-              {" "}or{" "}
-              <Link href="#" className="text-foreground underline underline-offset-4">
-                Telegram
-              </Link>
-            </p>
+            <BlurFade delay={BLUR_FADE_DELAY * 13}>
+              <h2 className="text-xl font-bold font-sans">Contact</h2>
+            </BlurFade>
+            <BlurFade delay={BLUR_FADE_DELAY * 14}>
+              <p className="text-sm text-muted-foreground font-medium">
+                Want to get in touch or hire me for a project?{" "}
+                <br />
+                Just shoot me a DM at{" "}
+                <Link href={DATA.contact.social.X.url} className="text-foreground underline underline-offset-4">
+                  X
+                </Link>
+                {" "}or{" "}
+                <Link href="#" className="text-foreground underline underline-offset-4">
+                  Telegram
+                </Link>
+              </p>
+            </BlurFade>
           </div>
         </section>
       </main>
