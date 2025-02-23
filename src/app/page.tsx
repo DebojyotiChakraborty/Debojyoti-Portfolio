@@ -132,26 +132,28 @@ export default function Page() {
         />
       )}
 
-      <main ref={mainRef} className="flex flex-col min-h-[100dvh] space-y-10 pt-36 pb-16">
+      <main ref={mainRef} className="flex flex-col min-h-[100dvh] space-y-24 pt-24 pb-16">
         <section id="hero">
-          <div className="mx-auto w-full max-w-2xl space-y-8">
+          <div className="mx-auto w-full max-w-2xl space-y-6">
             <div className="gap-6 flex items-start">
               <BlurFade delay={BLUR_FADE_DELAY}>
-                <Avatar className="size-28 border">
+                <Avatar className="size-32 border">
                   <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
                   <AvatarFallback>{DATA.initials}</AvatarFallback>
                 </Avatar>
               </BlurFade>
-              <div className="flex-col flex flex-1 space-y-2">
+              <div className="flex-col flex flex-1 space-y-1">
                 <BlurFadeText
-                  delay={BLUR_FADE_DELAY}
-                  className="text-3xl whitespace-nowrap font-bold tracking-tighter sm:text-4xl xl:text-5xl/none"
+                    delay={BLUR_FADE_DELAY}
+                  className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none whitespace-normal sm:whitespace-nowrap"
                   yOffset={8}
-                  text={`Hi! I'm ${DATA.name} 👋`}
+                  text={`Hi! I'm ${DATA.name}\u00A0👋`}
                 />
-                <CyclingText />
+                <BlurFade delay={BLUR_FADE_DELAY}>
+                  <CyclingText />
+                </BlurFade>
                 <BlurFadeText
-                  className="text-base text-muted-foreground/80"
+                  className="text-base text-muted-foreground/80 font-medium mt-1"
                   delay={BLUR_FADE_DELAY}
                   text={DATA.description}
                 />
@@ -161,10 +163,10 @@ export default function Page() {
         </section>
         <section id="about">
           <BlurFade delay={BLUR_FADE_DELAY * 3}>
-            <h2 className="text-xl font-bold">About</h2>
+            <h2 className="text-xl font-bold font-sans">About</h2>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
-            <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+            <Markdown className="prose max-w-full text-pretty text-sm text-muted-foreground dark:prose-invert font-medium">
               {DATA.summary}
             </Markdown>
           </BlurFade>
@@ -172,7 +174,7 @@ export default function Page() {
         <section id="education">
           <div className="flex min-h-0 flex-col gap-y-3">
             <BlurFade delay={BLUR_FADE_DELAY * 5}>
-              <h2 className="text-xl font-bold">Education</h2>
+              <h2 className="text-xl font-bold font-sans">Education</h2>
             </BlurFade>
             {DATA.education.map((education, id) => (
               <BlurFade
@@ -195,7 +197,7 @@ export default function Page() {
         <section id="experience">
           <div className="flex min-h-0 flex-col gap-y-3">
             <BlurFade delay={BLUR_FADE_DELAY * 7}>
-              <h2 className="text-xl font-bold">Experience</h2>
+              <h2 className="text-xl font-bold font-sans">Experience</h2>
             </BlurFade>
             {DATA.work.map((work, id) => (
               <BlurFade
@@ -220,24 +222,24 @@ export default function Page() {
         <section id="skills">
           <div className="flex min-h-0 flex-col gap-y-6">
             <BlurFade delay={BLUR_FADE_DELAY * 9}>
-              <h2 className="text-xl font-bold">Skills and Abilities</h2>
+              <h2 className="text-xl font-bold font-sans">Skills and Abilities</h2>
             </BlurFade>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-2">
               {Object.entries(DATA.skillCategories).map(([category, skills], categoryIndex) => (
                 <BlurFade 
                   key={category} 
                   delay={BLUR_FADE_DELAY * 10 + categoryIndex * 0.05}
                 >
-                  <div className="space-y-2">
-                    <h3 className="text-lg">{category}</h3>
-                    <div className="flex flex-wrap gap-2">
+                  <div className="space-y-1.5">
+                    <h3 className="font-medium font-sans text-xs sm:text-sm">{category}</h3>
+                    <div className="flex flex-wrap gap-1.5">
                       {skills.map((skill, skillIndex) => (
                         <BlurFade
                           key={skill}
                           delay={BLUR_FADE_DELAY * 10 + categoryIndex * 0.05 + skillIndex * 0.02}
                         >
                           <div 
-                            className="bg-black text-white px-4 py-2 rounded-md transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg"
+                            className="bg-black dark:bg-white text-white dark:text-black px-2 py-1 rounded-md transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg text-xs sm:text-sm font-normal"
                           >
                             {skill}
                           </div>
@@ -253,8 +255,8 @@ export default function Page() {
         <section id="projects">
           <div className="flex min-h-0 flex-col gap-y-6">
             <BlurFade delay={BLUR_FADE_DELAY * 11}>
-              <h2 className="text-xl font-bold">My Projects</h2>
-              <p className="text-muted-foreground mt-1">
+              <h2 className="text-xl font-bold font-sans">My Projects</h2>
+              <p className="text-sm text-muted-foreground mt-1 font-medium font-sans">
                 I have worked on creating intuitive mobile apps as well as beautiful websites.
               </p>
             </BlurFade>
@@ -308,7 +310,7 @@ export default function Page() {
         </section>
         <section id="contact">
           <div className="flex flex-col items-start gap-4">
-            <h2 className="text-2xl font-bold">Contact</h2>
+            <h2 className="text-2xl font-bold font-sans">Contact</h2>
             <p className="text-xl text-muted-foreground">
               Want to get in touch or hire me for a project?{" "}
               <br />

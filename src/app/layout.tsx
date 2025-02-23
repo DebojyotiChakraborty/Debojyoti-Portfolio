@@ -5,6 +5,7 @@ import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -51,7 +52,8 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
-          GeistSans.variable
+          GeistSans.variable,
+          GeistMono.variable
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

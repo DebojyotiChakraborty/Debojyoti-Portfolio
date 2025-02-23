@@ -44,7 +44,7 @@ export const FlipWords = ({
   if (!mounted) {
     return (
       <div className={cn(
-        "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2",
+        "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100",
         className
       )}>
         {words[0]}
@@ -78,7 +78,7 @@ export const FlipWords = ({
             mass: 1,
           }}
           className={cn(
-            "z-10 inline-block text-left text-neutral-900 dark:text-neutral-100 px-2",
+            "z-10 inline-block text-left text-neutral-900 dark:text-neutral-100",
             className
           )}
           key={currentWord}
