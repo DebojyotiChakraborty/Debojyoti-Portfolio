@@ -291,7 +291,7 @@ export default function Page() {
                         
                         {project.title === "OrbitAI - Image Generator" && (
                           <>
-                            A modern <span className="text-foreground">AI Image Generator</span> App which I designed as a freelance project, taking inspiration from Apple's new <span className="text-foreground">Spatial Design</span> in the Vision Pro. I designed the <span className="text-foreground">screens</span>, <span className="text-foreground">flows</span>, <span className="text-foreground">app-icon</span> and <span className="text-foreground">interactive onboarding</span>.
+                            A modern <span className="text-foreground">AI Image Generator</span> App which I designed as a freelance project, taking inspiration from Apple&apos;s new <span className="text-foreground">Spatial Design</span> in the Vision Pro. I designed the <span className="text-foreground">screens</span>, <span className="text-foreground">flows</span>, <span className="text-foreground">app-icon</span> and <span className="text-foreground">interactive onboarding</span>.
                           </>
                         )}
 

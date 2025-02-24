@@ -144,7 +144,7 @@ export const DATA = {
         title: "OrbitAI - Image Generator",
       href: "#",
       dates: "Nov 2024 - Jan 2025",
-      description: "A modern AI Image Generator App which I designed as a freelance project, taking inspiration from Apple's new Spatial Design in the Vision Pro. I designed the screens, flows, app-icon and interactive onboarding.",
+      description: "A modern AI Image Generator App which I designed as a freelance project, taking inspiration from Apple&apos;s new Spatial Design in the Vision Pro. I designed the screens, flows, app-icon and interactive onboarding.",
       images: ["/orbitai.webp"],
       technologies: ["Flutter", "Spatial Design", "Vision Pro"]
     } satisfies Project,
@@ -366,7 +366,7 @@ export const DATA = {
       ],
     },
     {
-      title: "Make School's Student App Competition 2017",
+      title: "Make School&apos;s Student App Competition 2017",
       dates: "May 19th - 21st, 2017",
       location: "International",
       description: "Improved PocketDoc and submitted to online competition",
@@ -530,7 +530,7 @@ export const DATA = {
       dates: "October 29, 2016",
       location: "Kingston, Ontario",
       description:
-        "Developed an internal widget for uploading assignments using Waterloo's portal app",
+        "Developed an internal widget for uploading assignments using Waterloo&apos;s portal app",
       image:
         "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/portal-hackathon.png",
       links: [
