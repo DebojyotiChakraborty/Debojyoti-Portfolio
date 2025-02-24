@@ -1,3 +1,5 @@
+import { type IconProps, Icons } from "@/components/icons";
+
 type Project = {
   title: string;
   href: string;
@@ -9,6 +11,18 @@ type Project = {
     downloads: string;
     rating: string;
   };
+};
+
+type NavItem = {
+  label: string;
+  href: string;
+  icon: (props: IconProps) => JSX.Element;
+};
+
+type Social = {
+  url: string;
+  icon: (props: IconProps) => JSX.Element;
+  navbar?: boolean;
 };
 
 export const DATA = {
@@ -49,5 +63,36 @@ export const DATA = {
       images: ["/whatsbuddy-1.png"],
       technologies: ["Flutter", "Riverpod", "Clean Architecture", "Hive"]
     }
-  ] as const satisfies readonly Project[]
-} 
+  ] as const satisfies readonly Project[],
+  navbar: [
+    {
+      label: "Resume",
+      href: "/",
+      icon: Icons.document
+    },
+  ] as const,
+  contact: {
+    social: {
+      telegram: {
+        url: "https://t.me/yourusername",
+        icon: Icons.telegram,
+        navbar: true
+      },
+      github: {
+        url: "https://github.com/yourusername",
+        icon: Icons.github,
+        navbar: true
+      },
+      twitter: {
+        url: "https://twitter.com/yourusername",
+        icon: Icons.x,
+        navbar: true
+      },
+      linkedin: {
+        url: "https://linkedin.com/in/yourusername",
+        icon: Icons.linkedin,
+        navbar: true
+      }
+    }
+  }
+} as const; 

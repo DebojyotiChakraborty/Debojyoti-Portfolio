@@ -22,7 +22,7 @@ export const DATA = {
   locationLink: "https://www.google.com/maps/place/durgapur",
   description: "I bring ideas to life with design, code and loads of coffee ☕",
   summary: "A 20 y.o. Flutter app developer from Durgapur, West Bengal. Tech Enthusiast, Anime/Sci-Fi Connoisseur and a Third-Year B.Tech student. I like to build apps and websites that not only serve their function, but also provide a delightful experience to the users.\n\nCurrently building [Radpapers]()",
-  avatarUrl: "/me.png",
+  avatarUrl: "/me_avatar.webp",
   skills: [
     "React",
     "Next.js",
@@ -48,34 +48,30 @@ export const DATA = {
         name: "GitHub",
         url: "https://dub.sh/dillion-github",
         icon: Icons.github,
-
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://dub.sh/dillion-linkedin",
         icon: Icons.linkedin,
-
         navbar: true,
       },
       X: {
         name: "X",
         url: "https://dub.sh/dillion-twitter",
         icon: Icons.x,
-
         navbar: true,
       },
-      Youtube: {
-        name: "Youtube",
-        url: "https://dub.sh/dillion-youtube",
-        icon: Icons.youtube,
+      Telegram: {
+        name: "Telegram",
+        url: "https://t.me/yourusername",
+        icon: Icons.telegram,
         navbar: true,
       },
       email: {
         name: "Send Email",
         url: "#",
         icon: Icons.email,
-
         navbar: false,
       },
     },
@@ -88,7 +84,7 @@ export const DATA = {
       badges: [],
       location: "",
       title: "Designer and Developer",
-      logoUrl: "/stellar.png",
+      logoUrl: "/stellarstudios.webp",
       start: "2021",
       end: "Present",
       description: "",
@@ -99,7 +95,7 @@ export const DATA = {
       badges: [],
       location: "",
       title: "Designer and Developer",
-      logoUrl: "/freelance.png",
+      logoUrl: "/freelance.webp",
       start: "Jan 2022",
       end: "Present",
       description: "",
@@ -110,7 +106,7 @@ export const DATA = {
       school: "Techno International New Town, Kolkata",
       href: "#",
       degree: "Bachelor of Technology in Computer Science",
-      logoUrl: "/techno.png",
+      logoUrl: "/college.webp",
       start: "2022",
       end: "2026",
     },
@@ -118,7 +114,7 @@ export const DATA = {
       school: "Amrita Vidyalayam, Durgapur",
       href: "#",
       degree: "CBSE     Class 1 - Class 12",
-      logoUrl: "/amrita.png",
+      logoUrl: "/school.webp",
       start: "2010",
       end: "2022",
     },
@@ -129,7 +125,7 @@ export const DATA = {
       href: "https://play.google.com/store/apps/details?id=com.debojyoti.radpapers",
       dates: "May 2024 - Present",
       description: "A beautiful wallpaper app with tons of beautiful ai-generated, human-edited wallpapers. I have designed the entire app, screens, flows, animations and micro-interactions. Developed it using Flutter, Google Firebase and GitHub. Currently, it has over 9500+ downloads on the Play Store, with 4.2 stars rating. iOS version of the app is currently under development and would be out soon!",
-      images: ["/radpapers-1.png"],
+      images: ["/radpapers_app.webp"],
       technologies: ["Flutter", "Firebase", "GitHub"],
       stats: {
         downloads: "9500+",
@@ -141,15 +137,15 @@ export const DATA = {
       href: "https://radpapers.in/",
       dates: "Sept 2024 - Oct 2024",
       description: "A responsive landing page for the Radpapers App which I designed and developed using Next.js, TailwindCSS, TypeScript.",
-      images: ["/radpapers-web.png"],
+      images: ["/radpapers_website.webp"],
       technologies: ["Next.js", "TailwindCSS", "TypeScript"]
     } satisfies Project,
     {
-      title: "OrbitAI - Image Generator",
+        title: "OrbitAI - Image Generator",
       href: "#",
       dates: "Nov 2024 - Jan 2025",
       description: "A modern AI Image Generator App which I designed as a freelance project, taking inspiration from Apple's new Spatial Design in the Vision Pro. I designed the screens, flows, app-icon and interactive onboarding.",
-      images: ["/orbit-ai.png"],
+      images: ["/orbitai.webp"],
       technologies: ["Flutter", "Spatial Design", "Vision Pro"]
     } satisfies Project,
     {
@@ -157,7 +153,7 @@ export const DATA = {
       href: "https://github.com/DebojyotiChakraborty/WhatsBuddy",
       dates: "Nov 2024 - Jan 2025",
       description: "WhatsBuddy is a lightweight and open-source WhatsApp utility app that helps you keep your contact list clean and tidy by letting you message people without saving their phone number on your device or add them to temporary contacts which are automatically deleted after 24 hours. It also lets you save your Status media you have seen on your device or share it directly to other social media. Built using Flutter, Riverpod, Clean Architecture and Hive.",
-      images: ["/whatsbuddy-1.png"],
+      images: ["/whatsbuddy.webp"],
       technologies: ["Flutter", "Riverpod", "Clean Architecture", "Hive"]
     } satisfies Project,
   ] as const satisfies readonly Project[],
