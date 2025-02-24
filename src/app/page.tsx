@@ -308,7 +308,7 @@ export default function Page() {
                         )}
                       </p>
 
-                      {'stats' in project && project.stats && (
+                      {'stats' in project && project.stats && project.title !== "Radpapers - 4K, HD Wallpapers" && (
                         <p className="text-sm text-muted-foreground">
                           Currently, it has over <span className="text-foreground">{project.stats.downloads}</span> on the Play Store, with <span className="text-foreground">{project.stats.rating}</span>.
                         </p>
@@ -357,7 +357,7 @@ export default function Page() {
                   X
                 </Link>
                 {" "}or{" "}
-                <Link href="#" className="text-foreground underline underline-offset-4">
+                <Link href={DATA.contact.social.Telegram.url} className="text-foreground underline underline-offset-4">
                   Telegram
                 </Link>
               </p>

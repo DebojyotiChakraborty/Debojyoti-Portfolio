@@ -21,7 +21,9 @@ export default function Navbar() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                href="/"
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
                   buttonVariants({ variant: "ghost", size: "icon" }),
                   "size-12 text-white dark:text-zinc-900 hover:bg-white/10 hover:text-white dark:hover:bg-zinc-900/10 dark:hover:text-zinc-900"

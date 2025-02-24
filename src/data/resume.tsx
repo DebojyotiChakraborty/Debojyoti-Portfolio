@@ -21,7 +21,7 @@ export const DATA = {
   location: "Durgapur, West Bengal",
   locationLink: "https://www.google.com/maps/place/durgapur",
   description: "I bring ideas to life with design, code and loads of coffee ☕",
-  summary: "A 20 y.o. Flutter app developer from Durgapur, West Bengal. Tech Enthusiast, Anime/Sci-Fi Connoisseur and a Third-Year B.Tech student. I like to build apps and websites that not only serve their function, but also provide a delightful experience to the users.\n\nCurrently building [Radpapers]()",
+  summary: "A 20 y.o. Flutter app developer from Durgapur, West Bengal. Tech Enthusiast, Anime/Sci-Fi Connoisseur and a Third-Year B.Tech student. I like to build apps and websites that not only serve their function, but also provide a delightful experience to the users.\n\nCurrently building [Radpapers](https://radpapers.in/)",
   avatarUrl: "/me_avatar.webp",
   skills: [
     "React",
@@ -46,25 +46,25 @@ export const DATA = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://dub.sh/dillion-github",
+        url: "https://github.com/DebojyotiChakraborty",
         icon: Icons.github,
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://dub.sh/dillion-linkedin",
+        url: "https://www.linkedin.com/in/debojyoti-chakraborty-4b879a25a",
         icon: Icons.linkedin,
         navbar: true,
       },
       X: {
         name: "X",
-        url: "https://dub.sh/dillion-twitter",
+        url: "https://x.com/Pseudo_Maverick",
         icon: Icons.x,
         navbar: true,
       },
       Telegram: {
         name: "Telegram",
-        url: "https://t.me/yourusername",
+        url: "https://t.me/Pseudo_Maverick",
         icon: Icons.telegram,
         navbar: true,
       },
@@ -80,7 +80,7 @@ export const DATA = {
   work: [
     {
       company: "StellarStudios",
-      href: "#",
+      href: "https://bit.ly/StellarStudios_Android",
       badges: [],
       location: "",
       title: "Designer and Developer",
@@ -104,7 +104,7 @@ export const DATA = {
   education: [
     {
       school: "Techno International New Town, Kolkata",
-      href: "#",
+      href: "https://tint.edu.in",
       degree: "Bachelor of Technology in Computer Science",
       logoUrl: "/college.webp",
       start: "2022",
@@ -112,7 +112,7 @@ export const DATA = {
     },
     {
       school: "Amrita Vidyalayam, Durgapur",
-      href: "#",
+      href: "https://amritaschool.edu.in/durgapur",
       degree: "CBSE     Class 1 - Class 12",
       logoUrl: "/school.webp",
       start: "2010",
@@ -543,10 +543,10 @@ export const DATA = {
     },
   ],
   skillCategories: {
-    "Programming Languages": ["C", "Java", "Python", "Dart", "HTML"],
-    "Frameworks": ["Flutter", "NextJS", "TailwindCSS"],
-    "Data Essentails": ["Firebase", "Hive", "JSON"],
-    "Software Essentials": ["Terminal", "Git", "VS Code"],
+    "Programming Languages": ["C", "Java", "Python", "Dart", "Kotlin", "Swift", "TypeScript", "JavaScript", "HTML", "CSS"],
+    "Frameworks": ["Flutter", "NextJS", "React", "TailwindCSS", "Android Native"],
+    "Data Essentials": ["Firebase", "JSON", "Hive", "MySQL", "MongoDB"],
+    "Software Essentials": ["Git", "Terminal", "VS Code", "Xcode", "Android Studio"],
     "Design Tools": ["Figma", "Photoshop", "Illustrator", "Lightroom", "Adobe XD"],
     "AI Tools": ["Midjourney", "ChatGPT", "Cursor", "Perplexity", "HailuoAI"],
   },
