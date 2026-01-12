@@ -1,53 +1,79 @@
 <div align="center">
-<img alt="Portfolio" src="https://github.com/dillionverma/portfolio/assets/16860528/57ffca81-3f0a-4425-b31d-094f61725455" width="90%">
+  <h1 align="center">Debojyoti's Portfolio</h1>
+  <p align="center">
+    A modern, minimalist, and high-performance portfolio website built with the latest web technologies.
+  </p>
 </div>
 
-# My Portfolio Website
+## 🚀 Overview
 
-This portfolio website is built using the [Magic UI Portfolio Template](https://magicui.design/docs/templates/portfolio) as a starting point.  It has been heavily modified and customized from the original template to fit my specific needs and style.
+This portfolio website is designed to showcase my skills, experience, and projects in a clean, professional, and interactive manner. It features a responsive design, smooth animations, and a seamless user experience across all devices.
 
-Magic UI provides a great foundation with pre-built components and templates, saving significant development time.  This project leverages the template's structure and some of its components, but includes substantial changes and additions throughout the site.
+## ✨ Features
 
-# Portfolio [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdillionverma%2Fportfolio)
+- **Modern Tech Stack**: Built with Next.js, React, and TypeScript for robust performance and type safety.
+- **Beautiful UI**: Styled with TailwindCSS and Shadcn/UI for a consistent and customized look.
+- **Dynamic Animations**: Utilizes Framer Motion and GSAP for fluid transitions, smooth scrolling (Lenis), and engaging visual effects like blur-fades and cycling text.
+- **Responsive Design**: Fully optimized for desktops, tablets, and mobile devices.
+- **Theme Support**: Integrated Dark and Light mode toggle to suit user preference.
+- **Easy Configuration**: Content such as resume data, projects, and skills are managed via a single configuration file (`src/data/resume.tsx`), making updates effortless.
+- **Interactive Elements**: Features like an image magnifier for project previews, a floating "Scroll Island" navigation bar, and hover effects.
+- **Markdown Support**: Includes support for rendering markdown content, perfect for blog posts or detailed project descriptions.
 
-Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://magicui.design/), deployed on Vercel.
+## 🛠️ Tech Stack
 
-# Features
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [TailwindCSS](https://tailwindcss.com/)
+- **UI Components**: [Shadcn/UI](https://ui.shadcn.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/), [GSAP](https://gsap.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Deployment**: [Vercel](https://vercel.com/)
 
-- Setup only takes a few minutes by editing the [single config file](./src/data/resume.tsx)
-- Built using Next.js 14, React, Typescript, Shadcn/UI, TailwindCSS, Framer Motion, Magic UI
-- Includes a blog
-- Responsive for different devices
-- Optimized for Next.js and Vercel
+## 🏃‍♂️ Getting Started Locally
 
-# Getting Started Locally
-
-1. Clone this repository to your local machine:
+1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/dillionverma/portfolio
+   git clone https://github.com/DebojyotiChakraborty/Debojyoti-Portfolio.git
    ```
 
-2. Move to the cloned directory
+2. **Navigate to the project directory:**
 
    ```bash
-   cd portfolio
+   cd Debojyoti-Portfolio
    ```
 
-3. Install dependencies:
+3. **Install dependencies:**
 
    ```bash
+   npm install
+   # or
    pnpm install
+   # or
+   yarn install
    ```
 
-4. Start the local Server:
+4. **Start the development server:**
 
    ```bash
+   npm run dev
+   # or
    pnpm dev
    ```
 
-5. Open the [Config file](./src/data/resume.tsx) and make changes
+5. **Open your browser:**
+   Visit `http://localhost:3000` to see the application running.
 
-# License
+## 📝 Configuration
 
-Licensed under the [MIT license](https://github.com/dillionverma/portfolio/blob/main/LICENSE.md).
+To update the portfolio content, navigate to `src/data/resume.tsx`. Here you can modify:
+
+- Personal Information (Name, Description, Social Links)
+- Education & Work Experience
+- Projects & Skills
+- Contact Details
+
+## 📄 License
+
+This project is licensed under the MIT License.

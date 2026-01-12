@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ResumeCard } from "@/components/resume-card";
@@ -14,11 +13,12 @@ import Markdown from "react-markdown";
 import { CyclingText } from "@/components/cycling-text";
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
-import Lenis from '@studio-freight/lenis'
+import Lenis from 'lenis'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { LinkPreview } from "@/components/LinkPreview";
 import Image from "next/image";
+import { ImageMagnifier } from "@/components/ui/image-magnifier";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -39,6 +39,9 @@ export default function Page() {
   const [mounted, setMounted] = useState(false);
   const mainRef = useRef<HTMLElement | null>(null);
   const lenisRef = useRef<Lenis | null>(null);
+
+  // Ensure we have a theme value (fallback to 'light' if not available)
+  const currentTheme = theme || 'light';
 
   useEffect(() => {
     setMounted(true);
@@ -109,7 +112,7 @@ export default function Page() {
     if (element && lenisRef.current) {
       const offset = 100;
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      
+
       lenisRef.current.scrollTo(elementPosition - offset, {
         duration: 1.5,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
@@ -130,7 +133,7 @@ export default function Page() {
           activeSection={activeSection}
           progress={scrollProgress}
           onSectionClick={handleSectionClick}
-          isDarkMode={theme === "dark"}
+          isDarkMode={currentTheme === "dark"}
         />
       )}
 
@@ -146,7 +149,7 @@ export default function Page() {
               </BlurFade>
               <div className="flex-col flex flex-1 space-y-1">
                 <BlurFadeText
-                    delay={BLUR_FADE_DELAY}
+                  delay={BLUR_FADE_DELAY}
                   className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none whitespace-normal sm:whitespace-nowrap"
                   yOffset={8}
                   text={`Hi! I'm ${DATA.name}\u00A0👋`}
@@ -228,8 +231,8 @@ export default function Page() {
             </BlurFade>
             <div className="flex flex-col gap-2">
               {Object.entries(DATA.skillCategories).map(([category, skills], categoryIndex) => (
-                <BlurFade 
-                  key={category} 
+                <BlurFade
+                  key={category}
                   delay={BLUR_FADE_DELAY * 10 + categoryIndex * 0.05}
                 >
                   <div className="space-y-1.5">
@@ -240,7 +243,7 @@ export default function Page() {
                           key={skill}
                           delay={BLUR_FADE_DELAY * 10 + categoryIndex * 0.05 + skillIndex * 0.02}
                         >
-                          <div 
+                          <div
                             className="bg-black dark:bg-white text-white dark:text-black px-2 py-1 rounded-md transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-lg text-xs sm:text-sm font-normal"
                           >
                             {skill}
@@ -259,10 +262,10 @@ export default function Page() {
             <BlurFade delay={BLUR_FADE_DELAY * 11}>
               <h2 className="text-xl font-bold font-sans">My Projects</h2>
               <p className="text-sm text-muted-foreground mt-1 font-medium font-sans">
-                I have worked on creating intuitive mobile apps as well as beautiful websites.
+                Here are some of the projects I have worked on.
               </p>
             </BlurFade>
-            
+
             <div className="flex flex-col gap-12">
               {DATA.projects.map((project, idx) => (
                 <BlurFade
@@ -280,15 +283,45 @@ export default function Page() {
                       </LinkPreview>
                       <span className="text-muted-foreground text-sm">{project.dates}</span>
                     </div>
-                    
+
                     <div className="prose max-w-full text-pretty text-sm text-muted-foreground dark:prose-invert font-medium">
                       <p>
+                        {project.title === "snekID - AI Snake Identifier" && (
+                          <>
+                            An <span className="text-foreground">AI-powered app</span> that lets users take pictures of snakes they might encounter and <span className="text-foreground">identifies the snake species</span> using the <span className="text-foreground">Gemini API</span> and displays all necessary information like <span className="text-foreground">Danger/Venom Level</span>, <span className="text-foreground">Behaviour</span>, <span className="text-foreground">Places of Origin</span>, <span className="text-foreground">Safety tips</span> etc.
+                          </>
+                        )}
+
+                        {project.title === "Span - Minimalist Time Visualizer" && (
+                          <>
+                            A <span className="text-foreground">minimalist time visualization app</span> that helps users understand and manage their time better through <span className="text-foreground">beautiful, intuitive visualizations</span>. Designed with a focus on <span className="text-foreground">simplicity</span> and <span className="text-foreground">user experience</span>, making time management both functional and visually appealing.
+                          </>
+                        )}
+
+                        {project.title === "CareSync - Biometric Authenticated Medical Logging System" && (
+                          <>
+                            A <span className="text-foreground">secure medical logging system</span> with <span className="text-foreground">biometric authentication</span>, ensuring <span className="text-foreground">patient data privacy and security</span>. Built for <span className="text-foreground">healthcare professionals and patients</span> to maintain <span className="text-foreground">accurate and secure medical records</span> with the highest standards of data protection. Includes <span className="text-foreground">roles for Patients, Doctors, Pharmacists and even first responders</span>.
+                          </>
+                        )}
+
+                        {project.title === "Cartoonify AI - Photo to Cartoon" && (
+                          <>
+                            A fun <span className="text-foreground">AI-powered app</span> that transforms user photos into <span className="text-foreground">cartoon-style images</span> using <span className="text-foreground">Gemini Nano Banana image model</span>. Features <span className="text-foreground">intuitive UI</span> and <span className="text-foreground">high-quality cartoon transformations</span>, making it easy for users to create fun, artistic versions of their photos. Includes <span className="text-foreground">art styles</span> from many popular cartoon and anime.
+                          </>
+                        )}
+
+                        {project.title === "Dewanjee.in" && (
+                          <>
+                            A <span className="text-foreground">utilitarian web page</span> I created for a local business that delivers <span className="text-foreground">furniture</span>, <span className="text-foreground">steel products</span> and services like <span className="text-foreground">interior makeovers</span>. Built using <span className="text-foreground">Next.js</span>, <span className="text-foreground">TypeScript</span>, and <span className="text-foreground">Tailwind CSS</span> to provide a clean and professional online presence.
+                          </>
+                        )}
+
                         {project.title === "radpapers.in" && (
                           <>
                             A <span className="text-foreground">responsive landing</span> page for the Radpapers App which I designed and developed using <span className="text-foreground">Next.js</span>, <span className="text-foreground">TailwindCSS</span>, <span className="text-foreground">TypeScript</span>.
                           </>
                         )}
-                        
+
                         {project.title === "OrbitAI - Image Generator" && (
                           <>
                             A modern <span className="text-foreground">AI Image Generator</span> App which I designed as a freelance project, taking inspiration from Apple&apos;s new <span className="text-foreground">Spatial Design</span> in the Vision Pro. I designed the <span className="text-foreground">screens</span>, <span className="text-foreground">flows</span>, <span className="text-foreground">app-icon</span> and <span className="text-foreground">interactive onboarding</span>.
@@ -305,6 +338,10 @@ export default function Page() {
                           <>
                             A beautiful wallpaper app with tons of beautiful ai-generated, human-edited wallpapers. I have designed the entire app, <span className="text-foreground">screens</span>, <span className="text-foreground">flows</span>, <span className="text-foreground">animations</span> and <span className="text-foreground">micro-interactions</span>. Developed it using <span className="text-foreground">Flutter</span>, <span className="text-foreground">Google Firebase</span> and <span className="text-foreground">GitHub</span>. Currently, it has over <span className="text-foreground">9500+ downloads</span> on the Play Store, with <span className="text-foreground">4.2 stars rating</span>. iOS version of the app is currently under development and should be out soon!
                           </>
+                        )}
+
+                        {!["snekID - AI Snake Identifier", "Span - Minimalist Time Visualizer", "CareSync - Biometric Authenticated Medical Logging System", "Cartoonify AI - Photo to Cartoon", "Dewanjee.in", "radpapers.in", "OrbitAI - Image Generator", "WhatsBuddy - WhatsApp Utility", "Radpapers - 4K, HD Wallpapers"].includes(project.title) && (
+                          <>{project.description}</>
                         )}
                       </p>
 
@@ -328,12 +365,14 @@ export default function Page() {
 
                     <div className="w-full rounded-xl overflow-hidden">
                       <div className="relative w-full">
-                        <Image
+                        <ImageMagnifier
                           src={project.images[0]}
                           alt={project.title}
                           width={1920}
                           height={1080}
-                          className="w-full h-auto object-cover"
+                          magnifierSize={300}
+                          zoomLevel={4}
+                          className="w-full h-auto"
                         />
                       </div>
                     </div>
@@ -352,7 +391,7 @@ export default function Page() {
               <p className="text-sm text-muted-foreground font-medium">
                 Want to get in touch or hire me for a project?{" "}
                 <br />
-                Just shoot me a DM at{" "}
+                Just shoot me a DM on{" "}
                 <Link href={DATA.contact.social.X.url} className="text-foreground underline underline-offset-4">
                   X
                 </Link>

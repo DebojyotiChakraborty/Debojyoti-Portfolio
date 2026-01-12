@@ -35,7 +35,7 @@ export default function ScrollIsland({
       padding: 0,
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         bounce: 0.2,
         duration: 0.5,
         mass: 0.8,
@@ -50,7 +50,7 @@ export default function ScrollIsland({
       padding: 12,
       y: 20,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         bounce: 0.2,
         duration: 0.5,
         mass: 0.8,
@@ -67,7 +67,7 @@ export default function ScrollIsland({
       y: -10,
       transition: {
         duration: 0.15,
-        ease: "easeOut"
+        ease: [0.4, 0, 1, 1] as const
       }
     },
     expanded: {
@@ -76,7 +76,7 @@ export default function ScrollIsland({
       y: 0,
       transition: {
         duration: 0.25,
-        ease: "easeOut",
+        ease: [0.4, 0, 1, 1] as const,
         delay: 0.1
       }
     }
@@ -86,17 +86,19 @@ export default function ScrollIsland({
     hidden: {
       opacity: 0,
       backdropFilter: "blur(0px)",
+      WebkitBackdropFilter: "blur(0px)",
       transition: {
         duration: 0.2,
-        ease: "easeOut"
+        ease: [0.4, 0, 1, 1] as const
       }
     },
     visible: {
       opacity: 1,
       backdropFilter: "blur(8px)",
+      WebkitBackdropFilter: "blur(8px)",
       transition: {
         duration: 0.3,
-        ease: "easeOut"
+        ease: [0.4, 0, 1, 1] as const
       }
     }
   }
