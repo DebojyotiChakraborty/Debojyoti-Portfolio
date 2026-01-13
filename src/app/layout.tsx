@@ -51,7 +51,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
+          "min-h-screen bg-background antialiased",
           GeistSans.variable,
           GeistMono.variable
         )}
@@ -59,7 +59,6 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TooltipProvider delayDuration={0}>
             {children}
-            <Navbar />
           </TooltipProvider>
         </ThemeProvider>
       </body>
